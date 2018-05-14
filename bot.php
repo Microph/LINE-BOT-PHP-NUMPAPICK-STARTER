@@ -24,10 +24,6 @@ if (!is_null($events['events'])) { //messages from chatroom
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-			//send text to esp8266
-			$Topic = "NodeMCU1" ;
-			getMqttfromlineMsg($Topic,$text); 
-			
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
@@ -49,6 +45,11 @@ if (!is_null($events['events'])) { //messages from chatroom
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 			$result = curl_exec($ch);
 			curl_close($ch);
+			echo $result . "\r\n";
+			
+			//send text to esp8266
+			$Topic = "NodeMCU1" ;
+			getMqttfromlineMsg($Topic,$text); 
 		}
 	}
 }
