@@ -8,13 +8,13 @@ $content = file_get_contents('php://input');
 
 $events = json_decode($content, true);
 // Validate parsed JSON data
-if (!is_null($events['ESP'])) {
+if (!is_null($events['ESP'])) { //messages from esp8266
 	
 	send_LINE($events['ESP']);
 		
 	echo "OK";
 	}
-if (!is_null($events['events'])) {
+if (!is_null($events['events'])) { //messages from chatroom
 	echo "line bot";
 	// Loop through each event
 	foreach ($events['events'] as $event) {
