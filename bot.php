@@ -45,7 +45,7 @@ if (!is_null($events['events'])) { //messages from chatroom
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 			$result = curl_exec($ch);
 			curl_close($ch);
-			echo $result . "\r\n";
+			echo "line message reply result: " . $result . "\r\n";
 			
 			//send text to esp8266
 			$Topic = "NodeMCU1" ;
