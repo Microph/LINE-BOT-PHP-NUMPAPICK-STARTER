@@ -10,7 +10,7 @@ $events = json_decode($content, true);
 // Validate parsed JSON data
 if (!is_null($events['ESP'])) { //messages from esp8266
 	
-	send_LINE($events['ESP']);
+	//send_LINE($events['ESP']);
 		
 	echo "OK";
 	}
@@ -44,7 +44,7 @@ if (!is_null($events['events'])) { //messages from chatroom
 			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 			$result = curl_exec($ch);
-			curl_close($ch);
+			//curl_close($ch);
 			echo "line message reply result: " . $result . "\r\n";
 			
 			//send text to esp8266
